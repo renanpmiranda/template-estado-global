@@ -4,6 +4,7 @@ import { handleHome } from "../Router/cordinator";
 import styled from "styled-components";
 
 export default function Cadastro (props){
+  
   const[formulario, setFormulario]=useState({name:"", url:"", price:""})
   const navigate = useNavigate();
 
@@ -48,6 +49,7 @@ export default function Cadastro (props){
     </CadastroContainer>
   )
 }
+
 const CadastroContainer = styled.main`
   display: flex;
   flex-direction: column;
