@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { handleCart} from "../Router/cordinator";
+import { handleCart, handleRegister} from "../Router/cordinator";
 import CardFrutas from "../components/CardFrutas";
-import frutaria from "../frutaria.json";
 import styled from "styled-components";
 
-export default function Mercadinho({carrinho, setCarrinho}) {
-
-    const [frutas, setFrutas] = useState(frutaria.frutaria);
+export default function Mercadinho({carrinho, setCarrinho, frutas, setFrutas}) {
 
     const navigate = useNavigate();
 
@@ -40,7 +37,7 @@ return (
     <MercadinhoContainer>
         <h1>Mercadinho</h1>
         <button onClick={() => handleCart(navigate)}>Vá para Carrinho </button>
-        <button>Cadastro de Frutas </button>
+        <button onClick={() => handleRegister(navigate)}>Cadastro de Frutas </button>
         <FrutasContainer>
             {frutasRenderizadas}
         </FrutasContainer>
